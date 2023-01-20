@@ -15,11 +15,12 @@ api = Blueprint('api', __name__)
 def login():
     email = request.json.get("email", None)
     password = request.json.get("password", None)
-    if email != "test@test.com" or password != "test":
+    user = User.query.filter(User.email== email, User.password == password, User.is_active == True).first() 
+    if not user:
         return jsonify({"msg": "Bad username or password"}), 401
 
     access_token = create_access_token(identity=email)
-    print(access_token)
+    
     response_body = { "email": email,
                       "access token": access_token}
 
