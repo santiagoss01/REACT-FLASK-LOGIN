@@ -1,0 +1,16 @@
+.row-private {
+  margin-top: 100px;
+  opacity: 0.9;
+}
+i {
+  scale: 200%;
+  margin-top: 40px;
+}
+i:hover {
+  color: green;
+}
+.icon {
+  padding-top: 5px;
+  scale: 300%;
+  margin-bottom: 10px;
+}
