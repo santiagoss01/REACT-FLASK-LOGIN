@@ -4,6 +4,7 @@ import { LogoutButton } from "../component/Loggout.js";
 import { Context } from "../store/appContext";
 import "../../styles/private.css";
 import { AiOutlineFrown } from "react-icons/ai";
+import { Spinner } from "../component/Spinner.jsx";
 
 export const Private = () => {
   const { store, actions } = useContext(Context);
@@ -11,6 +12,7 @@ export const Private = () => {
   const logged = store.logged;
   const navigate = useNavigate();
   const validateduser = actions.userValidation();
+  const [loading, setLoading] = useState(false);
 
   const useValidation = async () => {
     const user = await validateduser;
@@ -18,13 +20,17 @@ export const Private = () => {
   };
 
   useEffect(() => {
+    setLoading(true);
     store.token &&
       store.token != "" &&
       store.token != undefined &&
       useValidation();
+    setLoading(false);
   }, [store.token]);
 
-  return (
+  return loading ? (
+    <Spinner />
+  ) : (
     <div>
       {store.token && store.token != "" && store.token != undefined ? (
         <div className="private-bg container py-5 h-100">

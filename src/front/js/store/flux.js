@@ -1,7 +1,7 @@
 import { Link, redirect } from "react-router-dom";
 
 const BASE_URL =
-  "https://3001-4geeksacade-reactflaskh-8el3t4cb32v.ws-eu83.gitpod.io";
+  "https://3001-santiagoss0-reactflaskl-n5ion485vbv.ws-eu84.gitpod.io";
 
 const getState = ({ getStore, getActions, setStore }) => {
   return {
@@ -41,7 +41,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         };
         try {
           const resp = await fetch(
-            "https://3001-4geeksacade-reactflaskh-hz78l799w45.ws-eu84.gitpod.io/api/login",
+            "https://3001-santiagoss0-reactflaskl-n5ion485vbv.ws-eu84.gitpod.io/api/login",
             options
           );
           if (resp.status === 200) {
@@ -79,7 +79,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         };
         try {
           const resp = await fetch(
-            "https://3001-4geeksacade-reactflaskh-hz78l799w45.ws-eu84.gitpod.io/api/signup",
+            "https://3001-santiagoss0-reactflaskl-n5ion485vbv.ws-eu84.gitpod.io/api/signup",
             opts
           );
           if (resp.status !== 200) {
@@ -103,7 +103,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         };
         try {
           const res = await fetch(
-            "https://3001-4geeksacade-reactflaskh-hz78l799w45.ws-eu84.gitpod.io/api/private",
+            "https://3001-santiagoss0-reactflaskl-n5ion485vbv.ws-eu84.gitpod.io/api/private",
             requestOptions
           );
           const data = await res.json();
